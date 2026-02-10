@@ -1,4 +1,19 @@
- SELECT Email
+ Problem: Person table me jo emails 2 ya usse zyada baar aaye hain, unko return karna hai.
+Table structure:
+Copy code
+
+Person
++----+-------+
+| Id | Email |
++----+-------+
+✅ SQL Solution (LeetCode me SQL hi expected hai)
+Copy code
+Sql
+SELECT Email
 FROM Person
 GROUP BY Email
 HAVING COUNT(Email) > 1;
+🔎 Explanation (Simple)
+GROUP BY Email → same email ko group karta hai
+COUNT(Email) > 1 → jo email ek se zyada baar hai
+HAVING → group ke baad filter karne ke liye use hota hai
