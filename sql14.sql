@@ -44,21 +44,21 @@ FROM Insurance
 GROUP BY tiv_2015
 HAVING COUNT(*) > 1
 
-✔ Ensures at least two policyholders share the same tiv_2015.
+/*✔ Ensures at least two policyholders share the same tiv_2015.
 
-2️⃣ Ensure unique location
+2️⃣ Ensure unique location*/
 SELECT lat, lon
 FROM Insurance
 GROUP BY lat, lon
 HAVING COUNT(*) = 1
 
-✔ Keeps only policyholders whose (lat, lon) is unique.
+/*✔ Keeps only policyholders whose (lat, lon) is unique.
 
-3️⃣ Sum tiv_2016
+/*3️⃣ Sum tiv_2016
 
 Only rows satisfying both conditions are summed.
 
-🧠 Cleaner Version Using JOIN (More Interview-Friendly)
+🧠 Cleaner Version Using JOIN (More Interview-Friendly)*/
 SELECT 
     ROUND(SUM(i.tiv_2016), 2) AS tiv_2016
 FROM Insurance i
@@ -80,6 +80,7 @@ ON i.lat = l.lat AND i.lon = l.lon;
 
 HAVING is used after GROUP BY
 
-Tuple comparison (lat, lon) works in MySQL & PostgreSQL
+/*Tuple comparison (lat, lon) works in MySQL & PostgreSQL
 
 Always use ROUND() because LeetCode checks exact decimal precision
+*/
