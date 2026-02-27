@@ -1,4 +1,4 @@
-Response 1
+/*Response 1
 🔹 Q2. Department Highest Salary (LeetCode)
 
 This problem asks you to find the employees who have the highest salary in each department.
@@ -28,7 +28,7 @@ For each department, find the maximum salary.
 
 Return employees whose salary equals that maximum.
 
-💡 Solution 1: Using Subquery (Most Common & Recommended)
+💡 Solution 1: Using Subquery (Most Common & Recommended)*/
 SELECT 
     d.name AS Department,
     e.name AS Employee,
@@ -41,10 +41,10 @@ WHERE e.salary = (
     FROM Employee
     WHERE departmentId = e.departmentId
 );
-🔎 Explanation:
+/*🔎 Explanation:
 
 The subquery finds the maximum salary per department.
 
 The outer query returns employees matching that salary.
 
-Handles ties automatically (multiple employees with same highest salary).
+Handles ties automatically (multiple employees with same highest salary).*/
